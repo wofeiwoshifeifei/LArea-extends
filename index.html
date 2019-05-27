@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="all" />
+		<meta http-equiv="imagetoolbar" content="no" />
+		<meta http-equiv="pragma" Content="no-cach" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta http-equiv="keywords" content="" />
+		<meta name="author" content="" />
+		<meta name="copyright" content="" />
+		<meta name="description" content="" />
+		<meta name="HandheldFriendly" content="true" />
+		<title>地区移动以及PC支持</title>
+		<link rel="stylesheet" type="text/css" href="css/LArea.css">
+		<script type="text/javascript" src="js/LArea-extends.js"></script>
+
+	</head>
+	<body ontouchstart="" id="container">
+		<div id="tip" class="tip">
+			<span>现住址区域：</span><input type="text" id="selectCurArea" placeholder="房产所在城市" readonly="readonly">
+			<input id="selectCurAreaValue" name="mainCustomer.selectCurAreaValue" type="hidden" value="">
+		</div>
+		<div class="footer">
+			<button type="button" onclick="submitData('1');">提交</button>
+		</div>
+		<script type="text/javascript">
+			var provs_data = [{
+				"text": "省",
+				"value": "1"
+			}, {
+				"text": "省",
+				"value": "2"
+			}];
+			var citys_data = {
+				"1": [{
+					"text": "市",
+					"value": "11"
+				}, {
+					"text": "市",
+					"value": "12"
+				}],
+				"2": [{
+					"text": "市",
+					"value": "21"
+				}, {
+					"text": "市",
+					"value": "22"
+				}]
+			};
+			var dists_data = {
+				"11": [{
+					"text": "区",
+					"value": "111"
+				}, {
+					"text": "区",
+					"value": "112"
+				}],
+				"21": [{
+					"text": "区",
+					"value": "211"
+				}, {
+					"text": "区",
+					"value": "212"
+				}]
+			};
+			var selectArea = new LArea();
+
+			selectArea.init({
+				'trigger': "#selectCurArea", //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+				'valueTo': '#selectCurAreaValue', //选择完毕后id属性输出到该位置
+				'keys': {
+					id: 'value',
+					name: 'text'
+				}, //绑定数据源相关字段 id对应valueTo的valdata.listue属性输出 name对应trigger的value属性输出
+				'type': 2, //数据源类型
+				'data': [provs_data, citys_data, dists_data] //数据源
+			});
+		</script>
+</html>
