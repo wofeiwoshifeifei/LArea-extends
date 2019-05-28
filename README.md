@@ -1,6 +1,6 @@
 "# LArea-extends" 
 ## 基于这个进行扩展：https://github.com/xfhxbb/LArea
-## 改动范围：PC端浏览器可以滑动以及点击
+## 改动范围：在支持移动浏览器与微信打开浏览前提下，支持PC端浏览器可以滑动以及点击
 ## 使用方法：
  <link rel="stylesheet" href="css/LArea.css">
 同时引入js文件到页面中：
